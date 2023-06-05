@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block title %}
+    {% if form.is_valid and search_text %}
+        Search Results for "{{ search_text }}"
+    {% else %}
+        Bike Search
+    {% endif %}
+{% endblock %}
+{% block content %}
+<h2>Search for Bikes</h2>
+<form>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+{% if form.is_valid and search_text %}
+<h3>Search Results for <em>{{ search_text }}</em></h3>
+<ul class="list-group">
+    {% for bike in bikes %}
+    <li class="list-group-item">
+        <span class="text-info">Type: </span> <span>{{ bike.bike_type }}</span>
+        <br/>
+        <span class="text-info">Brand: </span> <span>{{ bike.brand }}</span>
+        <br/>
+        <span class="text-info">Model: </span> <a href="{% url 'bike_spec' bike.pk %}">{{ bike }}</a>
+        <br/>
+
+    </li>
+    {% empty %}
+        <li class="list-group-item">No results found.</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+
+        <!-- <span class="text-info">Type: </span><a href="{% url 'bike_type' bike.pk %}">{{ bike }}</a> -->
+        <!-- {% for contributor in book.contributors.all %}
+            {{ contributor.first_names }} {{ contributor.last_names }}{% if not forloop.last %}, {% endif %}
+        {% endfor %} -->

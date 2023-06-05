@@ -1,0 +1,122 @@
+{% extends 'products/index.html' %}
+{% load static %}
+
+{% block content %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Type</th>
+      <th scope="col">Model</th>
+      <th scope="col">Price</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><span>{{ bike.id }}</span></th>
+      <td>{{ bike.brand }}</td>
+      <td>{{ bike.bike_type }}</td>
+      <td><span>{{ bike.bike_model }}</span></td>
+      <td>{{ bike.price }}</td>
+      <td>{{ bike.weight }}</td>
+      <td>{{ bike.color }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="text-center container-sm">
+  <img src="/static/bikes/bike{{bike.id}}.jpg/" class="img-fluid">
+</div>
+<br>
+<h3>Specfication</h3>
+<hr>
+<div>
+<br>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold ">Frame:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.frame }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Fork:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.fork }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Fork:  </span></div> 
+    <div class="col-10"><span>{{ bike_spec.fork }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Handlebar:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.handlebar }}</span></div>    
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Handle Tape:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.handle_tape }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Stem:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.stem }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Seatpost:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.seatpost }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Saddle:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.saddle }}</span></div>
+  </div>
+  <div class="row"> 
+    <div class="col-2"><span class="fw-bold">Shift:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.shift }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Front Derailleur:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.front_derailleur }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Rear Derailleur:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.rear_derailleur }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Brake:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.brake }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Brake Lever:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.brake_lever }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Cassette:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.cassette }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Chain:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.chain }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Crankset:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.crankset }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Bottom Bracket:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.bottom_bracket }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Wheel:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.wheel }}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Thru axle:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.thru_axle }}</span> </div>       
+  </div>
+  <div class="row">
+    <div class="col-2"><span class="fw-bold">Tyre:  </span></div>
+    <div class="col-10"><span>{{ bike_spec.tyre }}</span></div> 
+  </div>
+</div>
+
+{% endblock %}
+
+
+

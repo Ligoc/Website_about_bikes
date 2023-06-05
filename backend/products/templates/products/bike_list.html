@@ -1,0 +1,32 @@
+{% extends 'products/index.html' %}
+{% load static %}
+
+{% block content %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Type</th>
+      <th scope="col">Model</th>
+      <th scope="col">Price</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Color</th>
+    </tr>
+  </thead>
+  {% for item in bike_list %}
+  <tbody>
+    <tr>
+      <th scope="row"><span>{{ item.bike.id }}</span></th>
+      <td>{{ item.bike.brand }}</td>
+      <td>{{ item.bike.bike_type }}</td>
+      <td><span><a class="text-reset" href="/bikes/{{item.bike.id}}">{{ item.bike.bike_model }}</a></span></td>
+      <td>{{ item.bike.price }}</td>
+      <td>{{ item.bike.weight }}</td>
+      <td>{{ item.bike.color }}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+{% endblock %}
+
